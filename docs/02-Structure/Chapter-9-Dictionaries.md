@@ -1,17 +1,16 @@
 # 第九章: 字典
 - [第九章: 字典](#第九章-字典)
 	- [创建](#创建)
-	- [用法](#用法)
-		- [数据选择](#数据选择)
-			- [Python新旧](#python新旧)
-			- [获取 `Key`](#获取-key)
-			- [获取 `Value`](#获取-value)
-			- [获取一对数据 `items`](#获取一对数据-items)
-		- [逻辑](#逻辑)
-		- [计数](#计数)
-			- [通常](#通常)
-			- [字典内置函数`get()`](#字典内置函数get)
-			- [找出最大值](#找出最大值)
+	- [数据选择](#数据选择)
+		- [Python新旧](#python新旧)
+		- [获取 `Key`](#获取-key)
+		- [获取 `Value`](#获取-value)
+		- [获取一对数据 `items`](#获取一对数据-items)
+	- [逻辑](#逻辑)
+	- [计数](#计数)
+		- [通常](#通常)
+		- [字典内置函数`get()`](#字典内置函数get)
+		- [找出最大值](#找出最大值)
 
 ## 创建
 字典用于存储和修改数据，并通过`{` `}`来创建，与`list`不同，我们不再像`list`一样使用`index`来访问内部元素，而使用`Key`来给每个数据打上标签，因此`dict`需要同时存储1对值，`Key`和`Value`，同时`Key`必须是`string`类型。
@@ -57,8 +56,7 @@ D['candy'] = 3
   {'jan': 100, 'chuck': 1, 'fred': 42}
   ```
 
-## 用法
-### 数据选择
+## 数据选择
 通过索引`Key`进行选取。
 ```Python
 >>> D = {'money': 12, 'tissues': 75, 'candy': 3}
@@ -66,7 +64,7 @@ D['candy'] = 3
 75
 ```
 
-#### Python新旧
+### Python新旧
 Python更新3.4后，`keys()`不再返回`list`类型，而是使用一种可迭代类型`dict_keys`
 ```Python
 >>> D = {'money': 12, 'tissues': 75, 'candy': 3}
@@ -81,7 +79,7 @@ dict_keys(['money', 'tissues', 'candy'])
 | .valuse() | dict_values |                  dict_values([12, 75, 3])                  |
 | .items()  | dict_items  | dict_items([('money', 12), ('tissues', 75), ('candy', 3)]) |
 
-#### 获取 `Key`
+### 获取 `Key`
 ```Python
 >>> D = {'money': 12, 'tissues': 75, 'candy': 3}
 >>> list(D.keys())
@@ -94,14 +92,14 @@ dict_keys(['money', 'tissues', 'candy'])
 ['money', 'tissues', 'candy']
 ```
 
-#### 获取 `Value`
+### 获取 `Value`
 ```Python
 >>> D = {'money': 12, 'tissues': 75, 'candy': 3}
 >>> list(D.values())
 [12, 75, 3]
 ```
 
-#### 获取一对数据 `items`
+### 获取一对数据 `items`
 ```Python
 >>> D = {'money': 12, 'tissues': 75, 'candy': 3}
 >>> list(D.items())
@@ -118,7 +116,7 @@ tissues 75
 candy 3
 ```
 
-### 逻辑
+## 逻辑
 `in`的查找功能在字典中作用于`Key`。
 ```Python
 >>> D = {'money': 12, 'tissues': 75, 'candy': 3}
@@ -139,9 +137,9 @@ fred 42
 jan 100
 ```
 
-### 计数
+## 计数
 字典常用来计数。
-#### 通常
+### 通常
 **计数：**
 ```Python
 counts = dict()
@@ -157,7 +155,7 @@ print(counts)
 {'csev': 2, 'cwen': 2, 'zqian': 1}
 ```
 
-#### 字典内置函数`get()`
+### 字典内置函数`get()`
 **函数说明：**
 `get()`函数用于获取`Value`，不会抛出`error`。
 `D.get(Key, DefaultValue)`：如果在字典`D`中存在`Key`，则`pass`，如果不存在，则返回初值`DefaultValue`。
@@ -180,7 +178,7 @@ print(counts)
 {'csev': 2, 'cwen': 2, 'zqian': 1}
 ```
 
-#### 找出最大值
+### 找出最大值
 ```Python
 bigcount = None
 bigword = None

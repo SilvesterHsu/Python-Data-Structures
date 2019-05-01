@@ -1,8 +1,7 @@
 # 第10章: 元组
 - [第10章: 元组](#第10章-元组)
 	- [创建](#创建)
-	- [用法](#用法)
-		- [排序](#排序)
+	- [排序](#排序)
 
 ## 创建
 列表用于存储和修改数据，并通过`(` `)`来创建。
@@ -26,8 +25,7 @@ TypeError: 'tuple' object does not support item assignment
 
 > 临时变量通常使用`tuple`
 
-## 用法
-### 排序
+## 排序
 排序使用`sorted`函数
 ```Python
 sorted(iterable, /, *, key=None, reverse=False)

@@ -1,9 +1,8 @@
 # 第七章: 文件
 - [第七章: 文件](#第七章-文件)
 	- [创建](#创建)
-	- [用法](#用法)
-		- [序列读取](#序列读取)
-		- [整个文件读取](#整个文件读取)
+	- [序列读取](#序列读取)
+	- [整个文件读取](#整个文件读取)
 	- [扩展](#扩展)
 	- [练习](#练习)
 
@@ -25,7 +24,7 @@ fhand = open('mbox.txt')
 ```
 <_io.TextIOWrapper name='mbox.txt' mode='r' encoding='UTF-8'>
 ```
-## 用法
+
 示例文件 `this.txt`:
 ```
 The Zen of Python, by Tim Peters
@@ -47,7 +46,7 @@ Complex is better than complicated.\n
 ...
 ```
 
-### 序列读取
+## 序列读取
 文件中的每一行都是字符串，所以字符串共同构成**序列**。
 * 有多少行，就有多少个字符串
 * 序列存在先后顺序
@@ -74,7 +73,7 @@ Complex is better than complicated.
 ...
 ```
 
-### 整个文件读取
+## 整个文件读取
 将整个文件读入**一个字符串**。
 ```Python
 fhand = open('this.txt')
