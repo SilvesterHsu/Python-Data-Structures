@@ -1,15 +1,17 @@
 site_name: Python Data Structure
 nav:
-    - Home: 02-Structure/README.md
-    - User Guide:
-      - 第六章: 02-Structure/Chapter-6-Strings.md
-      - 第七章: 02-Structure/Chapter-7-Files.md
-      - 第八章: 02-Structure/Chapter-8-Lists.md
-      - 第九章: 02-Structure/Chapter-9-Dictionaries.md
-      - 第十章: 02-Structure/Chapter-10-Tuples.md
+    - 课程说明: 02-Structure/README.md
+    - 第六章：字符串: 02-Structure/Chapter-6-Strings.md
+    - 第七章：文件: 02-Structure/Chapter-7-Files.md
+    - 第八章：列表: 02-Structure/Chapter-8-Lists.md
+    - 第九章：字典: 02-Structure/Chapter-9-Dictionaries.md
+    - 第十章：元组: 02-Structure/Chapter-10-Tuples.md
 theme:
     name: readthedocs
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 markdown_extensions:
     - pymdownx.arithmatex
+    - admonition
+    - pymdownx.details
+    - pymdownx.superfences
