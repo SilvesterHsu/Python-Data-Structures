@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>第七章：文件 - Python Data Structure</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u7b2c\u4e03\u7ae0\uff1a\u6587\u4ef6";
+    var mkdocs_page_input_path = "02-Structure/Chapter-7-Files.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../" class="icon icon-home"> Python Data Structure</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../">课程说明</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Chapter-6-Strings/">第六章：字符串</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">第七章：文件</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#_1">创建</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_2">序列读取</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_3">整个文件读取</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_4">扩展</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_5">练习</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Chapter-8-Lists/">第八章：列表</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Chapter-9-Dictionaries/">第九章：字典</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Chapter-10-Tuples/">第十章：元组</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../">Python Data Structure</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>第七章：文件</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="_1">创建</h2>
+<p>句柄<code>handle</code>由函数<code>open()</code>创建。
+<pre class="highlight"><code class="language-Python">handle = open(filename, mode)</code></pre></p>
+<table>
+<thead>
+<tr>
+<th align="center">模式</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">r（默认）</td>
+<td align="center">以只读方式打开文件，指针将会放在文件的开头</td>
+</tr>
+<tr>
+<td align="center">w</td>
+<td align="center">打开一个文件只用于写入，并从开头开始编辑，如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td align="center"><strong>Example:</strong></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><pre class="highlight"><code class="language-python">fhand = open('mbox.txt')</code></pre></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">句柄<code>handle</code>:</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><pre class="highlight"><code>&lt;_io.TextIOWrapper name='mbox.txt' mode='r' encoding='UTF-8'&gt;</code></pre></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>示例文件 <code>this.txt</code>:
+<pre class="highlight"><code>The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+...</code></pre>
+计算机中，文本文件的每行末尾都有换行符（newline）<code>\n</code>。
+<pre class="highlight"><code>The Zen of Python, by Tim Peters\n
+\n
+Beautiful is better than ugly.\n
+Explicit is better than implicit.\n
+Simple is better than complex.\n
+Complex is better than complicated.\n
+...</code></pre></p>
+<h2 id="_2">序列读取</h2>
+<p>文件中的每一行都是字符串，所以字符串共同构成<strong>序列</strong>。
+* 有多少行，就有多少个字符串
+* 序列存在先后顺序</p>
+<pre class="highlight"><code class="language-Python">xfile = open('this.txt')
+for cheese in xfile:
+    print(cheese)</code></pre>
+
+<p><strong>注：</strong> 每一个字符串的末尾是换行符<code>\n</code>，同时<code>print()</code>也会自动换行，因此打印出来的字符串之间会空一行。
+<pre class="highlight"><code>The Zen of Python, by Tim Peters
+
+
+
+Beautiful is better than ugly.
+
+Explicit is better than implicit.
+
+Simple is better than complex.
+
+Complex is better than complicated.
+...</code></pre></p>
+<h2 id="_3">整个文件读取</h2>
+<p>将整个文件读入<strong>一个字符串</strong>。
+<pre class="highlight"><code class="language-Python">fhand = open('this.txt')
+inp = fhand.read()
+print(inp)</code></pre></p>
+<pre class="highlight"><code>The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+...</code></pre>
+
+<h2 id="_4">扩展</h2>
+<p><code>open()</code>之后需要<code>close()</code>:
+<pre class="highlight"><code class="language-Python">fhand = open('this.txt')
+fhand.close()</code></pre>
+但常于<code>with</code>连用，可不用进行<code>close()</code>操作。
+<pre class="highlight"><code class="language-Python">with open('this.txt') as fhand:
+    print(fhand.read())</code></pre></p>
+<h2 id="_5">练习</h2>
+<p>读取<code>this.txt</code>的前5行。
+<pre class="highlight"><code class="language-Python">with open('this.txt') as fhand:
+    inp = fhand.read().split('\n')
+    for i in inp[:5]:
+        print(i)</code></pre></p>
+<pre class="highlight"><code>The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Chapter-8-Lists/" class="btn btn-neutral float-right" title="第八章：列表">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Chapter-6-Strings/" class="btn btn-neutral" title="第六章：字符串"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Chapter-6-Strings/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Chapter-8-Lists/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

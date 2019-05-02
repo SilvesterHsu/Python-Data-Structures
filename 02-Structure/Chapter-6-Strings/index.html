@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>第六章：字符串 - Python Data Structure</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u7b2c\u516d\u7ae0\uff1a\u5b57\u7b26\u4e32";
+    var mkdocs_page_input_path = "02-Structure/Chapter-6-Strings.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../" class="icon icon-home"> Python Data Structure</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../">课程说明</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">第六章：字符串</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#_1">创建</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_2">字符串连接</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_3">字符串转换</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_4">字符串选择</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#_5">选择</a></li>
+        
+            <li><a class="toctree-l3" href="#_6">切片</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#_7">字符串长度</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_8">逻辑判断</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_9">比较</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_10">字符查找</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_11">抹掉空格</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_12">字符串字典</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Chapter-7-Files/">第七章：文件</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Chapter-8-Lists/">第八章：列表</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Chapter-9-Dictionaries/">第九章：字典</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Chapter-10-Tuples/">第十章：元组</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../">Python Data Structure</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>第六章：字符串</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="_1">创建</h2>
+<p><code>string</code>可由单双引号创建，<code>''</code> 或 <code>""</code>。</p>
+<pre class="highlight"><code class="language-python">str1 = 'Hello'
+str2 = "World"</code></pre>
+
+<h2 id="_2">字符串连接</h2>
+<p>使用 <code>+</code> 来连接2个字符串。</p>
+<pre class="highlight"><code class="language-Python">&gt;&gt;&gt; str1 = 'Hello'
+&gt;&gt;&gt; str2 = "World"
+&gt;&gt;&gt; str1+str2
+'HelloWorld'</code></pre>
+
+<h2 id="_3">字符串转换</h2>
+<p>通过 <code>int()</code> 将 <code>string</code> 转换为 <code>int</code> 类。</p>
+<pre class="highlight"><code class="language-Python">&gt;&gt;&gt; str3 = '123'
+&gt;&gt;&gt; type(str3)
+&lt;class 'str'&gt;
+&gt;&gt;&gt; num = int(str3)
+&gt;&gt;&gt; type(num)
+&lt;class 'int'&gt;</code></pre>
+
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><code>int()</code> 常于 <code>input()</code> 连用。
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt; num = int(input('number = '))
+number = 123
+&gt;&gt;&gt; type(num)
+&lt;class 'int'&gt;</code></pre></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Example</p>
+<p><span><span class="MathJax_Preview">output = input + 1</span><script type="math/tex">output = input + 1</script></span>
+<pre class="highlight"><code class="language-Python">&gt;&gt;&gt; x = input("number = ") + 1
+number = 123
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+TypeError: can only concatenate str (not "int") to str</code></pre></p>
+<pre class="highlight"><code class="language-Python">&gt;&gt;&gt; x = input("number = ")
+number = 123
+&gt;&gt;&gt; x = int(x) + 1
+&gt;&gt;&gt; x
+124</code></pre>
+
+</div>
+<h2 id="_4">字符串选择</h2>
+<h3 id="_5">选择</h3>
+<p>通过索引 <code>index</code> 和方括号 <code>[ ]</code> 来查看字符串内部数据。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>如果索引 <code>index</code> 超出字符串长度，将会导致错误。</p>
+<blockquote>
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt; fruit = 'banana'
+&gt;&gt;&gt; fruit[10]
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+IndexError: string index out of range</code></pre>
+
+</blockquote>
+</div>
+<h3 id="_6">切片</h3>
+<pre class="highlight"><code class="language-Python">&gt;&gt;&gt; s = 'Monty Python'
+&gt;&gt;&gt; print(s[0:4])
+Mont</code></pre>
+
+<ul>
+<li>切片位置到第二个数之前，不包括第二个数。
+  <pre class="highlight"><code class="language-Python">&gt;&gt;&gt; print(s[6:7])
+P</code></pre></li>
+<li>如果索引超出范围，切片会在字符串末尾结束。
+  <pre class="highlight"><code class="language-Python">&gt;&gt;&gt; print(s[6:20])
+Python</code></pre></li>
+<li>左、右缺省将被分别视作从头开始和到末尾结束。
+  <pre class="highlight"><code class="language-python">&gt;&gt;&gt; s = 'Monty Python'
+&gt;&gt;&gt; print(s[:2])
+Mo
+&gt;&gt;&gt; print(s[8:])
+thon
+&gt;&gt;&gt; print(s[:])
+Monty Python</code></pre></li>
+</ul>
+<h2 id="_7">字符串长度</h2>
+<p>内建函数 <code>len()</code> 可用来计算字符串长度。
+<pre class="highlight"><code class="language-Python">&gt;&gt;&gt; fruit = 'banana'
+&gt;&gt;&gt; print(len(fruit))
+6</code></pre></p>
+<h2 id="_8">逻辑判断</h2>
+<pre class="highlight"><code class="language-Python">&gt;&gt;&gt; fruit = 'banana'
+&gt;&gt;&gt; 'n' in fruit
+True
+&gt;&gt;&gt; 'm' in fruit
+False
+&gt;&gt;&gt; 'nan' in fruit
+True
+&gt;&gt;&gt; if 'a' in fruit :
+...     print('Found it!')
+...
+Found it!</code></pre>
+
+<h2 id="_9">比较</h2>
+<pre class="highlight"><code class="language-Python">if word == 'banana':
+    print('All right, bananas.')
+
+if word &lt; 'banana':
+    print('Your word,' + word + ', comes before banana.')
+elif word &gt; 'banana':
+    print('Your word,' + word + ', comes after banana.')
+else:
+    print('All right, bananas.')</code></pre>
+
+<h2 id="_10">字符查找</h2>
+<p>我们通过 <code>find()</code> 来寻找字符串中的子字符串。</p>
+<ul>
+<li><code>find()</code> 寻找子字符串第一次出现的位置。
+  <pre class="highlight"><code class="language-Python">&gt;&gt;&gt; fruit = 'banana'
+&gt;&gt;&gt; pos = fruit.find('na')
+&gt;&gt;&gt; print(pos)
+2</code></pre></li>
+<li>如果子字符串未被找到，则 <code>find()</code> 返回 <code>-1</code>。
+  <pre class="highlight"><code class="language-Python">&gt;&gt;&gt; aa = fruit.find('z')
+&gt;&gt;&gt; print(aa)
+-1</code></pre></li>
+</ul>
+<h2 id="_11">抹掉空格</h2>
+<ul>
+<li><code>strip()</code> 同时抹掉开头和结尾的空格（子字符串）。
+  <pre class="highlight"><code class="language-Python">&gt;&gt;&gt; greet = '   Hello Bob  '
+&gt;&gt;&gt; greet.strip()
+'Hello Bob'</code></pre></li>
+<li><code>lstrip()</code> 和 <code>rstrip()</code> 分别抹掉开头和结尾的空格（子字符串）。
+  <pre class="highlight"><code class="language-Python">&gt;&gt;&gt; greet = '   Hello Bob  '
+&gt;&gt;&gt; greet.lstrip()
+'Hello Bob  '
+&gt;&gt;&gt; greet.rstrip()
+'   Hello Bob'</code></pre></li>
+</ul>
+<h2 id="_12">字符串字典</h2>
+<p>字符串内建函数库 <a href="https://docs.python.org/3/library/stdtypes.html#string-methods">Library</a>。
+<pre class="highlight"><code class="language-Python">&gt;&gt;&gt; stuff = 'Hello world'
+&gt;&gt;&gt; type(stuff)
+&lt;class 'str'&gt;
+&gt;&gt;&gt; dir(stuff)
+['capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']</code></pre></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Chapter-7-Files/" class="btn btn-neutral float-right" title="第七章：文件">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../" class="btn btn-neutral" title="课程说明"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Chapter-7-Files/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>
