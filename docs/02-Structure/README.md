@@ -1,4 +1,4 @@
-## Python Data Structures
+## Python 数据结构
 > **初级**
 
 ![02-README](img/02-README.jpg)

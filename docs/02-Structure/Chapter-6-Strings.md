@@ -1,19 +1,25 @@
 ## 创建
+
 `string`可由单双引号创建，`''` 或 `""`。
+
 ```python
 str1 = 'Hello'
 str2 = "World"
 ```
+
 ## 字符串连接
 使用 `+` 来连接2个字符串。
+
 ```Python
 >>> str1 = 'Hello'
 >>> str2 = "World"
 >>> str1+str2
 'HelloWorld'
 ```
+
 ## 字符串转换
 通过 `int()` 将 `string ` 转换为 `int` 类。
+
 ```Python
 >>> str3 = '123'
 >>> type(str3)
@@ -23,32 +29,38 @@ str2 = "World"
 <class 'int'>
 ```
 
-`int()` 常于 `input()` 连用。
-```python
->>> num = int(input('number = '))
-number = 123
->>> type(num)
-<class 'int'>
-```
+!!! tip
+    `int()` 常于 `input()` 连用。
+    ```python
+    >>> num = int(input('number = '))
+    number = 123
+    >>> type(num)
+    <class 'int'>
+    ```
 
-**Example:** $output = input + 1$
-```Python
->>> x = input("number = ") + 1
-number = 123
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: can only concatenate str (not "int") to str
-```
-```Python
->>> x = input("number = ")
-number = 123
->>> x = int(x) + 1
->>> x
-124
-```
+!!! note "Example"
+    $output = input + 1$
+    ```Python
+    >>> x = input("number = ") + 1
+    number = 123
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    TypeError: can only concatenate str (not "int") to str
+    ```
+
+    ```Python
+    >>> x = input("number = ")
+    number = 123
+    >>> x = int(x) + 1
+    >>> x
+    124
+    ```
+
 ## 字符串选择
 ### 选择
+
 通过索引 `index` 和方括号 `[ ]` 来查看字符串内部数据。
+
 ```Python
 >>> fruit = 'banana'
 >>> index = 1
@@ -63,15 +75,16 @@ number = 123
   >>> fruit[2-1]
   'a'
   ```
+!!! warning
+    如果索引 `index` 超出字符串长度，将会导致错误。
 
-> 如果索引 `index` 超出字符串长度，将会导致错误。
-> ```python
-> >>> fruit = 'banana'
-> >>> fruit[10]
-> Traceback (most recent call last):
->   File "<stdin>", line 1, in <module>
-> IndexError: string index out of range
-> ```
+    > ```python
+      >>> fruit = 'banana'
+      >>> fruit[10]
+      Traceback (most recent call last):
+        File "<stdin>", line 1, in <module>
+      IndexError: string index out of range
+      ```
 
 ### 切片
 ```Python
@@ -79,6 +92,7 @@ number = 123
 >>> print(s[0:4])
 Mont
 ```
+
 * 切片位置到第二个数之前，不包括第二个数。
   ```Python
   >>> print(s[6:7])
@@ -135,7 +149,8 @@ else:
 ```
 ## 字符查找
 我们通过 `find()` 来寻找字符串中的子字符串。
-* find() 寻找子字符串第一次出现的位置。
+
+* `find()` 寻找子字符串第一次出现的位置。
   ```Python
   >>> fruit = 'banana'
   >>> pos = fruit.find('na')
@@ -148,6 +163,7 @@ else:
   >>> print(aa)
   -1
   ```
+
 ## 抹掉空格
 * `strip()` 同时抹掉开头和结尾的空格（子字符串）。
   ```Python
