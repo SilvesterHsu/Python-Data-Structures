@@ -7,7 +7,7 @@ nav:
     - 第九章：字典: 02-Structure/Chapter-9-Dictionaries.md
     - 第十章：元组: 02-Structure/Chapter-10-Tuples.md
 theme:
-    name: material
+    name: readthedocs
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 markdown_extensions:
